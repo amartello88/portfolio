@@ -16,17 +16,18 @@ function closeMenu() {
 }
 
 // Backdrop semitransparente para cerrar al tocar afuera
-let backdropEl = null;
 function addBackdrop(){
   if (backdropEl) return;
   backdropEl = document.createElement('div');
   backdropEl.style.position = 'fixed';
   backdropEl.style.inset = '0';
   backdropEl.style.background = 'rgba(0,0,0,.25)';
-  backdropEl.style.zIndex = '1000';
+  backdropEl.style.zIndex = '900'; // 👈 menor que el nav (que está en 1100)
   backdropEl.addEventListener('click', closeMenu);
   document.body.appendChild(backdropEl);
 }
+
+
 function removeBackdrop(){
   if (!backdropEl) return;
   backdropEl.removeEventListener('click', closeMenu);
