@@ -49,6 +49,7 @@ body{
   background:rgba(255,255,255,.72);
   backdrop-filter:saturate(180%) blur(10px);
   border-bottom:1px solid var(--line);
+  padding: 1rem 0; 
 }
 .nav-container{
   display:flex; align-items:center; justify-content:space-between;
@@ -151,7 +152,7 @@ body{
   text-align: center;
 }
 
-}
+
 .hero-inner{ text-align:center; max-width:780px; }
 .hero-title{
   font-family:"Playfair Display", Georgia, serif;
@@ -329,4 +330,35 @@ body{
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto }
   .btn, .card{ transition:none }
+}
+.no-scroll { overflow: hidden; }
+
+/* ===== Desktop nav ===== */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none; /* ocultamos la hamburguesa */
+  }
+
+  .nav-menu {
+    position: static;
+    transform: none;
+    height: auto;
+    width: auto;
+    background: transparent;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+    pointer-events: all;
+  }
+
+  .nav-link {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .cta-link {
+    border: 1px solid var(--rose);
+    color: var(--rose);
+  }
 }
