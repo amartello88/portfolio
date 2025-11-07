@@ -165,19 +165,18 @@
         </ul>
       </div>
 
-      <form class="contact-form" action="#" method="post" novalidate>
-        <label class="sr-only" for="name">Nombre</label>
-        <input id="name" name="name" type="text" placeholder="Nombre" required />
+      <form class="contact-form" action="contact.php" method="post" novalidate>
+      <input name="name" type="text" placeholder="Nombre" required />
+      <input name="email" type="email" placeholder="Email" required />
+      <textarea name="message" rows="5" placeholder="Contame de tu proyecto..." required></textarea>
 
-        <label class="sr-only" for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="Email" required />
+      <!-- honeypot anti-spam (oculto) -->
+      <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
-        <label class="sr-only" for="message">Mensaje</label>
-        <textarea id="message" name="message" rows="5" placeholder="Contame de tu proyecto..." required></textarea>
+      <button class="btn btn-solid" type="submit">Enviar</button>
+      <p class="form-note">* El formulario envia datos a PHP.</p>
+    </form>
 
-        <button class="btn btn-solid" type="submit">Enviar</button>
-        <p class="form-note">* El formulario es demostrativo (sin backend).</p>
-      </form>
     </div>
   </section>
 

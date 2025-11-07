@@ -69,7 +69,7 @@ const observer = new IntersectionObserver((entries) => {
 
 sections.forEach(sec => observer.observe(sec));
 
-// ====== Form demo (evita submit real) ======
+/* // ====== Form demo (evita submit real) ======
 const form = document.querySelector('.contact-form');
 form?.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -84,3 +84,4 @@ form?.addEventListener('submit', (e) => {
   alert('¡Gracias! Recibí tu mensaje (demo).');
   form.reset();
 });
+ */
