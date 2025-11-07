@@ -220,27 +220,87 @@ body{
 .project-actions{ margin-top:12px; display:flex; gap:10px; align-items:center; flex-wrap:wrap }
 
 /* ========= Contact ========= */
-.contact-grid{
-  display:grid; gap:var(--gap);
-  grid-template-columns:1fr;
+/* === CONTACTO === */
+.contact {
+  background-color: var(--white-bg);
+  padding: 60px 20px;
 }
-.contact-list{ list-style:none; padding:0; margin:14px 0 0; display:grid; gap:8px }
-.contact-list a{ color:var(--rose); text-decoration:none }
-.contact-list a:hover{ color:var(--rose-hover) }
 
-.contact-form{
-  display:grid; gap:12px; align-content:start;
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Texto a la izquierda, form a la derecha */
+  gap: 40px;
+  align-items: start;
 }
-.contact-form input,
-.contact-form textarea{
-  width:100%; border:1px solid var(--line); background:#fff;
-  border-radius:12px; padding:12px 14px; font:inherit; color:var(--text);
+
+.contact-list {
+  list-style: none;
+  margin-top: 25px;
+  padding: 0;
 }
-.contact-form input:focus,
-.contact-form textarea:focus{
-  outline:2px solid rgba(185,128,128,.35);
-  border-color:var(--rose);
+
+.contact-list li {
+  margin-bottom: 10px;
+  color: var(--text);
 }
+
+.contact-list a {
+  color: var(--rose);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* === FORMULARIO === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #b8b8b8;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text);
+  transition: border-color 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--rose);
+  outline: none;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn.btn-solid {
+  align-self: flex-start;
+  background-color: var(--rose);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn.btn-solid:hover {
+  background-color: #a56969;
+}
+
+
 .form-note{ color:var(--muted); font-size:.85rem; margin:4px 0 0 }
 
 /* ========= Footer ========= */
@@ -360,5 +420,14 @@ body{
   .cta-link {
     border: 1px solid var(--rose);
     color: var(--rose);
+  }
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-list {
+    margin-bottom: 30px;
   }
 }
