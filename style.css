@@ -285,7 +285,7 @@ form textarea {
 }
 
 .btn.btn-solid {
-  align-self: flex-start;
+  align-self: center;
   background-color: var(--rose);
   color: #fff;
   border: none;
